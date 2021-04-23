@@ -7,7 +7,7 @@
         {% for post in post_data %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
+                    <h2 class="card-title"> {{post.title}} </h2>
                     <p class="card-text">{{ post.content|truncatechars:100 }}</p>
                     <div class="btn btn-warning">詳細</div>
                 </div>
