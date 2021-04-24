@@ -5,4 +5,4 @@ def common(request):
     context = {
         'category_data': category_data,
     }
-    return contex
+    return context
