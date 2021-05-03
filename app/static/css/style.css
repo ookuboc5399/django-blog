@@ -72,3 +72,31 @@ a:hover {
     text-decoration: none;
     color: orange;
 }
+
+/* ボタン */
+.button {
+    font-size: 1.375rem;
+    background: #0bd;
+    color: #fff;
+    border-radius: 5px;
+    padding: 18px 32px;
+}
+.button:hover {
+    background: #0090aa;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+
+#home {
+    background-image: url(../media/images/フリーランスの宿.png);
+    min-height: 20vh;
+}
+#home .page-title {
+    text-transform: none;
+}

@@ -15,6 +15,13 @@ class IndexView(View):
             'post_data': post_data,
         })
 
+class BlogView(View):
+    def get(self, request, *args, **kwargs):
+        post_data = Post.objects.order_by("id")
+        return render(request, 'app/blog.html', {
+            'post_data': post_data,
+        })
+
 class PostDetailView(View):
     def get(self, request, *args, **kwargs):
         print(self.kwargs['pk'])
@@ -104,7 +111,7 @@ class CategoryView(View):
     def get(self, request, *args, **kwargs):
         category_data = Category.objects.get(name=self.kwargs['category'])
         post_data = Post.objects.order_by('-id').filter(category=category_data)
-        return render(request, 'app/index.html', {
+        return render(request, 'app/blog.html', {
             'post_data': post_data
         })
 
@@ -122,7 +129,7 @@ class SearchView(View):
             query = reduce(and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in query_list])
             post_data = post_data.filter(query)
 
-        return render(request, 'app/index.html', {
+        return render(request, 'app/blog.html', {
             'keyword': keyword,
             'post_data': post_data
         })
